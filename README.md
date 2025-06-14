@@ -24,5 +24,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: He/Him
 - ⚡ Fun fact: I have actively worked on javascript, frontend, spring, java -->
 
-I enjoy solving problems, learning new stuff. Love exploring various data structures and algorithms. Currently exploring Java, Spring and Angular. Open for new challenges!
+I enjoy solving problems, learning new stuff. Love exploring various data structures and algorithms. Currently exploring Java, Spring and Angular. Open for new challenges, please feel free to reach me out!!
+
+I love opensource and softwares, and enjoy contributing and giving back to the community as well (although, I am a newbie 😄 to this really fascinating world). Contrinuted to [cpInitiative](https://github.com/cpinitiative/usaco-guide) and [angular](https://github.com/angular/angular). Just getting started ⚡⚡⚡
+
+My github profile is still under construction though, need to organize my existing repositories where I have played around A LOT, as well as upload new repos where I have and building new stuff. Expect an update soon!
 
