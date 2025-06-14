@@ -1,32 +1,27 @@
-## Hi there 👋
+### 👋 Hi there!
 
-<!--
-**abhideepd/abhideepd** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I’m a curious developer who loves solving problems and exploring new technologies. Currently, I'm diving deep into **Java**, **Spring**, and **Angular**, while sharpening my understanding of **data structures and algorithms**.
 
-Here are some ideas to get you started:
+I'm always up for new challenges—feel free to reach out! 🔭
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
 
-<!-- - 🔭 I’m currently working on personal full stack ai projects
-- 🌱 I’m currently learning everything about AI both in depth (RNNs, CNNs, NLP, Transformers etc.) and imlementation(llms, frontier models, qlora etc.)
-- 👯 I’m looking to collaborate on making FullStack AI Applications (with front end, backed, finetuning custom ai datasets and all that jazz)
-- 🤔 I’m looking for help with career navigation in Full Stack AI Developement and Ops
-<!--- 💬 Ask me about my interests : AI, ML, Backend, Frontend, Compiler Design (crafting interpreters), Math, Stats, Probability, Graphs, Algorithms
-<!--- 📫 How to reach me: Github, Twitter, [Hugging Face Profile](https://huggingface.co/drazzer)
-- 😄 Pronouns: He/Him
-- ⚡ Fun fact: I have actively worked on javascript, frontend, spring, java -->
+### 💻 A Little About Me
 
-I enjoy solving problems, learning new stuff. Love exploring various data structures and algorithms. Currently exploring Java, Spring and Angular. Open for new challenges, please feel free to reach me out!!
+- 🧠 I enjoy learning and building.
+- 🛠️ Actively exploring the Java + Spring + Angular tech stack.
+- 🌱 I’m passionate about **open source** and giving back to the community (still a newbie 😄, but loving every bit of it).
+- 🤝 Contributed to:
+  - [cpInitiative](https://github.com/cpinitiative/usaco-guide)
+  - [Angular](https://github.com/angular/angular)
 
-I love opensource and softwares, and enjoy contributing and giving back to the community as well (although, I am a newbie 😄 to this really fascinating world). Contrinuted to [cpInitiative](https://github.com/cpinitiative/usaco-guide) and [angular](https://github.com/angular/angular). Just getting started ⚡⚡⚡
+---
 
-My github profile is still under construction though, need to organize my existing repositories where I have played around A LOT, as well as upload new repos where I have and building new stuff. Expect an update soon!
+### 🚧 GitHub in Progress
 
+My GitHub profile is still under construction 🌱  
+I'm working on:
+- Organizing past repositories where I’ve experimented and learned a LOT.
+- Uploading new projects I’ve been building recently.
+
+⚡ Expect updates soon!
