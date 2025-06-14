@@ -19,7 +19,7 @@ Here are some ideas to get you started:
 - 🌱 I’m currently learning everything about AI both in depth (RNNs, CNNs, NLP, Transformers etc.) and imlementation(llms, frontier models, qlora etc.)
 - 👯 I’m looking to collaborate on making FullStack AI Applications (with front end, backed, finetuning custom ai datasets and all that jazz)
 - 🤔 I’m looking for help with career navigation in Full Stack AI Developement and Ops
-- 💬 Ask me about my interests : AI, ML, Backend, Frontend, Compiler Design (crafting interpreters), Math, Stats, Probability, Graphs, Algorithms
-- 📫 How to reach me: Github, Twitter, [Hugging Face Profile](https://huggingface.co/drazzer)
+<!--- 💬 Ask me about my interests : AI, ML, Backend, Frontend, Compiler Design (crafting interpreters), Math, Stats, Probability, Graphs, Algorithms-->
+<!--- 📫 How to reach me: Github, Twitter, [Hugging Face Profile](https://huggingface.co/drazzer)-->
 - 😄 Pronouns: He/Him
 - ⚡ Fun fact: I have actively worked on javascript, frontend, spring, java
