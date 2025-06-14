@@ -25,3 +25,6 @@ I'm working on:
 - Uploading new projects I’ve been building recently.
 
 ⚡ Expect updates soon!
+
+---
+btw, [myResume](https://drive.google.com/file/d/1SSM7tN7iUap72fsoQbTyYvWHvhU22BCF/view?usp=sharing)
