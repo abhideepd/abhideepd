@@ -27,4 +27,9 @@ I'm working on:
 ⚡ Expect updates soon!
 
 ---
+
 btw, [myResume](https://drive.google.com/file/d/1SSM7tN7iUap72fsoQbTyYvWHvhU22BCF/view?usp=sharing)
+
+---
+
+[_personal_](https://github.com/abhideepd/myBlog)
