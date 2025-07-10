@@ -1,5 +1,11 @@
 ### 👋 Hi there!
 
+---
+
+btw, [myResume](https://drive.google.com/file/d/1SSM7tN7iUap72fsoQbTyYvWHvhU22BCF/view?usp=sharing)
+
+---
+
 I’m a curious developer who loves solving problems and exploring new technologies. Currently, I'm diving deep into **Java**, **Spring**, and **Angular**, while sharpening my understanding of **data structures and algorithms**.
 
 I'm always up for new challenges—feel free to reach out! 🔭
@@ -28,7 +34,7 @@ I'm working on:
 
 ---
 
-btw, [myResume](https://drive.google.com/file/d/1SSM7tN7iUap72fsoQbTyYvWHvhU22BCF/view?usp=sharing)
+
 
 ---
 
