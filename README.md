@@ -6,8 +6,6 @@ btw, [myResume](https://drive.google.com/file/d/1SSM7tN7iUap72fsoQbTyYvWHvhU22BC
 
 ---
 
-I’m a curious developer who loves solving problems and exploring new technologies. Currently, I'm diving deep into **Java**, **Spring**, and **Angular**, while sharpening my understanding of **data structures and algorithms**.
-
 I'm always up for new challenges—feel free to reach out! 🔭
 
 ---
@@ -15,8 +13,8 @@ I'm always up for new challenges—feel free to reach out! 🔭
 ### 💻 A Little About Me
 
 - 🧠 I enjoy learning and building.
-- 🛠️ Actively exploring the Java + Spring + Angular tech stack.
-- 🌱 I’m passionate about **open source** and giving back to the community (still a newbie 😄, but loving every bit of it).
+- 🛠️ Actively exploring the Java + Spring + Angular tech stack, well, these are just tools, I am okay with assembly if its required to solve the problem.
+- 🌱 passionate about **open source** and giving back to the community (still a newbie 😄, but loving every bit of it).
 - 🤝 Contributed to:
   - [cpInitiative](https://github.com/cpinitiative/usaco-guide)
     - [My Merged PRs](https://github.com/cpinitiative/usaco-guide/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd)   
