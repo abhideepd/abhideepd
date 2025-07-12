@@ -19,7 +19,9 @@ I'm always up for new challenges—feel free to reach out! 🔭
 - 🌱 I’m passionate about **open source** and giving back to the community (still a newbie 😄, but loving every bit of it).
 - 🤝 Contributed to:
   - [cpInitiative](https://github.com/cpinitiative/usaco-guide)
+    - [My Merged PRs](https://github.com/cpinitiative/usaco-guide/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd)   
   - [Angular](https://github.com/angular/angular)
+    - [My Merged PRs](https://github.com/angular/angular/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd)
 
 ---
 
