@@ -2,41 +2,20 @@
 
 ---
 
-btw, [myResume](https://drive.google.com/file/d/1SSM7tN7iUap72fsoQbTyYvWHvhU22BCF/view?usp=sharing)
+btw, [myResume](https://drive.google.com/file/d/1PyPYAFyWBK0C9S5sfB_sMENhcELSNICM/view?usp=drive_link)
 
 ---
 
 I'm always up for new challenges—feel free to reach out! 🔭
 
 ---
-
-### 💻 A Little About Me
-
-- 🧠 I enjoy learning and building.
-- 🛠️ Actively exploring the Java + Spring + Angular tech stack, well, these are just tools, I am okay with assembly if its required to solve the problem.
-- 🌱 passionate about **open source** and giving back to the community (still a newbie 😄, but loving every bit of it).
 - 🤝 Contributed to:
   - [cpInitiative](https://github.com/cpinitiative/usaco-guide)
     - [My Merged PRs](https://github.com/cpinitiative/usaco-guide/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd)   
   - [Angular](https://github.com/angular/angular)
     - [My Merged PRs](https://github.com/angular/angular/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd)
-
 ---
 
-### 🚧 GitHub in Progress
-
-My GitHub profile is still under construction 🌱  
-I'm working on:
-- Organizing past repositories where I’ve experimented and learned a LOT.
-- Uploading new projects I’ve been building recently.
-
-⚡ Expect updates soon!
-
----
-
-
-
----
 
 [_personal_](https://github.com/abhideepd/myBlog)
 [other links 1](https://github.com/abhideepd/personal-exploration/tree/79dfe2c504fc7b6bd7a789bc6aa2f2dc6b116570/Demo%20projects)
