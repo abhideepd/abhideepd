@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/abhideepd">Link to my GitHub profile</a>
+  <a href="https://abhideepd.github.io/abhideepd/">Link to my github page</a>
 </p>
 
 ---
