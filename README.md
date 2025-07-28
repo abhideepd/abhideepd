@@ -41,7 +41,7 @@ Contributing to open source has shaped the way I write and think about code—cl
 
 ## 📄 Resume & Profiles
 
-- 📄 [My Resume](https://drive.google.com/file/d/1PyPYAFyWBK0C9S5sfB_sMENhcELSNICM/view?usp=drive_link)
+- 📄 [My Resume](https://drive.google.com/file/d/1vahjxKx2mViiBax0igqPNS6XXeiDGJY-/view?usp=sharing)
 - 💼 [LinkedIn](https://www.linkedin.com/in/imabhideep/)
 - [HackerRank Profile Link](https://www.hackerrank.com/profile/abhideepd)
 - [Leetcode Profile Link](https://leetcode.com/u/IMABHIDEEP/)
