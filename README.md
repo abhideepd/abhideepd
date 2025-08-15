@@ -17,7 +17,9 @@
 - [HackerRank Profile Link](https://www.hackerrank.com/profile/abhideepd)
 - [Leetcode Profile Link](https://leetcode.com/u/IMABHIDEEP/)
 </details>
+
 ---
+
 <details>
 <summary>🤝 Open Source Contributions</summary>
 
@@ -30,6 +32,7 @@ Contributing to open source has shaped the way I write and think about code—cl
 </details>
 
 ---
+
 <details>
 <summary>🔗 Projects</summary>
 
@@ -37,6 +40,7 @@ Contributing to open source has shaped the way I write and think about code—cl
 - **🔬 [n*n tic tac toe](https://abhideepd.github.io/Tic-Tac-Toe/):** A complete front end, n*n tic tac toe, with 3 modes, manual, against computer, computer vs computer [tic-tac-toe repo link](https://github.com/abhideepd/Tic-Tac-Toe).
 - **🧪 [typemint](https://abhideepd.github.io/typemint/):** Combining my love for touch typing for practice as well as a stress reliever, the typeracer site and interface and analytics, building a touch typing website, with more control towards the content, and analytics geared towards the words and characters with speed and accuracy and an improvement section geared towards, using those words more often in order to get better at them [typemint repo link](https://github.com/abhideepd/typemint).
 </details>
+
 ---
 
 <details>
