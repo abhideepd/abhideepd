@@ -12,7 +12,7 @@
 <details>
 <summary>📄 Resume & Profiles</summary>
 
-- 📄 [My Resume](https://drive.google.com/file/d/1rTcqeqTDjOfzrHoRH_skeUPRLp8G91XF/view?usp=drive_link)
+- 📄 [My Resume](https://drive.google.com/file/d/1LaNCUHdzn3MVPCTTT6gImOeOMr2csz-Q/view?usp=sharing)
 - 💼 [LinkedIn](https://www.linkedin.com/in/imabhideep/)
 - [HackerRank Profile Link](https://www.hackerrank.com/profile/abhideepd)
 - [Leetcode Profile Link](https://leetcode.com/u/IMABHIDEEP/)
