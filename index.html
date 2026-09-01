@@ -1,412 +1,1459 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<title>Abhideep Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-:root {
-  --bg-1: #0b1120;
-  --bg-2: #111827;
-  --bg-3: #0f172a;
-  --card: rgba(15, 23, 42, 0.78);
-  --card-border: rgba(148, 163, 184, 0.18);
-  --text: #e2e8f0;
-  --muted: #cbd5e1;
-  --shadow: 0 25px 45px rgba(2, 6, 23, 0.5);
-}
+  <meta charset="UTF-8">
+  <title>Abhideep Das — Backend Engineer &amp; Systems Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Abhideep Das — Backend Developer specializing in Java, Spring Boot, REST APIs, System Design, and Open Source contributions.">
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-@keyframes floatGlow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
+  <style>
+    :root {
+      /* Dark Palette (Default) */
+      --bg-primary: #07090e;
+      --bg-secondary: #0d111a;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --bg-card-hover: rgba(30, 41, 59, 0.8);
+      --bg-card-solid: #111827;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-color-hover: rgba(16, 185, 129, 0.35);
+      
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --accent-emerald: #10b981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.15);
+      --accent-cyan: #06b6d4;
+      --accent-indigo: #6366f1;
+      --accent-purple: #a855f7;
+      --accent-blue: #3b82f6;
+      
+      --code-bg: #090d16;
+      --code-header: #111827;
+      --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.12);
 
-html { scroll-behavior: smooth; }
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.14), transparent 25%),
-    linear-gradient(135deg, var(--bg-1), var(--bg-2) 42%, var(--bg-3));
-  color: var(--text);
-  position: relative;
-  overflow-x: hidden;
-}
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-card-hover: rgba(241, 245, 249, 0.95);
+      --bg-card-solid: #ffffff;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-color-hover: rgba(16, 185, 129, 0.4);
+      
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      
+      --code-bg: #1e293b;
+      --code-header: #0f172a;
+      --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+      --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.15);
+    }
 
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  width: 240px;
-  height: 240px;
-  border-radius: 9999px;
-  filter: blur(18px);
-  opacity: 0.5;
-  z-index: 0;
-  pointer-events: none;
-}
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body::before {
-  top: 8%;
-  left: -40px;
-  background: rgba(96, 165, 250, 0.22);
-  animation: floatGlow 12s ease-in-out infinite;
-}
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
 
-body::after {
-  right: -30px;
-  bottom: 12%;
-  background: rgba(45, 212, 191, 0.18);
-  animation: floatGlow 16s ease-in-out infinite reverse;
-}
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      position: relative;
+    }
 
-.animate-fade-in { animation: fadeIn 0.35s ease-in-out; }
+    /* Subtle background grid pattern */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
+        linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.page-shell {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 20px 64px;
-}
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
 
-.hero-card {
-  background: rgba(15, 23, 42, 0.72);
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 28px;
-  box-shadow: var(--shadow);
-  padding: 28px 24px;
-  margin-bottom: 24px;
-  text-align: center;
-}
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(7, 9, 14, 0.75);
+      border-bottom: 1px solid var(--border-color);
+      transition: background var(--transition-normal);
+    }
+    [data-theme="light"] header {
+      background: rgba(248, 250, 252, 0.8);
+    }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(168, 85, 247, 0.12));
-  border: 1px solid rgba(147, 197, 253, 0.15);
-  color: #bfdbfe;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 7px 12px;
-  border-radius: 9999px;
-  margin-bottom: 18px;
-}
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
 
-.hero-title {
-  margin: 0 0 14px;
-  font-size: clamp(2.1rem, 4vw, 3.1rem);
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  background: linear-gradient(135deg, #e2e8f0, #93c5fd, #c4b5fd);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-main);
+    }
 
-.hero-subtitle {
-  margin: 0;
-  color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.08rem);
-  line-height: 1.7;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--accent-emerald), var(--accent-cyan));
+      color: #07090e;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
 
-.blog-pill {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 0.35rem 0.8rem;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #3b82f6, #4f46e5);
-  color: #ffffff !important;
-  box-shadow: 0 12px 20px rgba(59, 130, 246, 0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none !important;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
 
-.blog-pill:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 24px rgba(59, 130, 246, 0.28);
-}
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
 
-#sections {
-  display: grid;
-  gap: 18px;
-}
+    .nav-links a:hover {
+      color: var(--accent-emerald);
+    }
 
-.section-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 22px;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  background: rgba(15, 23, 42, 0.75);
-  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-.section-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-}
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
 
-.accordion-btn {
-  width: 100%;
-  border: none;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-  color: white;
-  text-align: left;
-  padding: 1rem 1.2rem;
-  font-size: 1.08rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: filter 0.2s ease, transform 0.2s ease;
-}
+    .btn-icon:hover {
+      color: var(--text-main);
+      border-color: var(--accent-emerald);
+      background: var(--bg-card-hover);
+    }
 
-.accordion-btn:hover {
-  filter: brightness(1.03);
-}
+    .cmd-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
 
-.accordion-btn:focus-visible {
-  outline: 3px solid rgba(255,255,255,0.7);
-  outline-offset: -3px;
-}
+    .cmd-trigger:hover {
+      border-color: var(--accent-emerald);
+      color: var(--text-main);
+    }
 
-.accordion-btn svg {
-  width: 1.15rem;
-  height: 1.15rem;
-  transition: transform 0.25s ease;
-  flex-shrink: 0;
-}
+    .kbd {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.75rem;
+    }
 
-.accordion-btn .rotate-180 {
-  transform: rotate(180deg);
-}
+    /* Hero Section */
+    .hero-section {
+      padding: 64px 0 40px;
+    }
 
-.section-content {
-  background: rgba(15, 23, 42, 0.9);
-  padding: 1.2rem 1.3rem 1.35rem;
-  color: var(--muted);
-  line-height: 1.7;
-}
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: var(--accent-emerald-glow);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
 
-.section-content a {
-  color: #7dd3fc;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulse 2s infinite;
+    }
 
-.section-content a:hover {
-  color: #bae6fd;
-  text-decoration: underline;
-}
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-.section-content ul,
-.section-content ol {
-  margin: 0;
-  padding-left: 1.25rem;
-}
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
 
-.section-content li + li {
-  margin-top: 0.35rem;
-}
+    .gradient-text {
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--accent-emerald) 70%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-.section-content strong {
-  color: var(--text);
-}
+    .hero-bio {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
 
-.section-content blockquote {
-  margin: 0 0 1rem;
-  padding: 0.8rem 1rem;
-  border-left: 4px solid #14b8a6;
-  background: rgba(20, 184, 166, 0.08);
-  border-radius: 0 12px 12px 0;
-  color: var(--text);
-  font-style: italic;
-}
+    .hero-bio strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
 
-.section-content > *:last-child {
-  margin-bottom: 0;
-}
+    /* Key Stats Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
 
-@media (max-width: 640px) {
-  .page-shell { padding: 20px 14px 46px; }
-  .hero-card { padding: 22px 18px; }
-  .accordion-btn { padding: 0.9rem 1rem; }
-  .section-content { padding: 1rem 1rem 1.1rem; }
-}
-</style>
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      backdrop-filter: blur(12px);
+      transition: all var(--transition-fast);
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-color-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      color: #04120c;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border-color: var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-emerald);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Main Grid Layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin: 40px 0 80px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .title-prefix {
+      color: var(--accent-emerald);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+    }
+
+    /* Witty IDE Code Sandbox Window */
+    .ide-window {
+      background: var(--code-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 12px;
+    }
+
+    .ide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--code-header);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ide-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .ide-tabs {
+      display: flex;
+      gap: 2px;
+      margin-left: 12px;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn.active {
+      background: var(--code-bg);
+      color: var(--accent-emerald);
+      border-bottom: 2px solid var(--accent-emerald);
+    }
+
+    .tab-btn:hover:not(.active) {
+      color: var(--text-muted);
+    }
+
+    .ide-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .run-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .run-btn:hover {
+      background: var(--accent-emerald);
+      color: #04120c;
+    }
+
+    .ide-body {
+      padding: 20px 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      overflow-x: auto;
+      color: #e2e8f0;
+      min-height: 220px;
+    }
+
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Syntax Highlighting */
+    .kw { color: #f43f5e; font-weight: 600; } /* Keyword */
+    .type { color: #38bdf8; } /* Type */
+    .str { color: #a3e635; } /* String */
+    .num { color: #fb923c; } /* Number */
+    .cmnt { color: #64748b; font-style: italic; } /* Comment */
+    .fn { color: #818cf8; } /* Function */
+    .anno { color: #c084fc; } /* Annotation */
+
+    .ide-output {
+      background: #04070d;
+      border-top: 1px solid var(--border-color);
+      padding: 14px 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent-emerald);
+      display: none;
+    }
+    .ide-output.show {
+      display: block;
+    }
+    .ide-output-title {
+      color: var(--text-dim);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Open Source Section */
+    .os-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .os-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .os-card:hover {
+      border-color: var(--border-color-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .os-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .os-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .badge-merged {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: #c084fc;
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .os-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .os-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-emerald);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: gap var(--transition-fast);
+    }
+
+    .os-link:hover {
+      gap: 10px;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-fast);
+    }
+
+    .project-card:hover {
+      border-color: var(--border-color-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color var(--transition-fast);
+    }
+
+    .project-link:hover {
+      color: var(--accent-emerald);
+    }
+
+    /* Skills Grid */
+    .skills-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .skill-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 14px;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent-emerald-glow);
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: all var(--transition-fast);
+    }
+
+    .skill-pill:hover {
+      border-color: var(--accent-emerald);
+      transform: translateY(-2px);
+      color: var(--accent-emerald);
+    }
+
+    /* Command Palette Modal */
+    .cmd-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 13, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 15vh;
+    }
+
+    .cmd-overlay.active {
+      display: flex;
+    }
+
+    .cmd-modal {
+      width: 100%;
+      max-width: 580px;
+      background: var(--bg-card-solid);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      animation: modalSlide 0.2s ease-out;
+    }
+
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .cmd-search-bar {
+      display: flex;
+      align-items: center;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-color);
+      gap: 12px;
+    }
+
+    .cmd-search-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-main);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .cmd-list {
+      max-height: 320px;
+      overflow-y: auto;
+      padding: 8px;
+      list-style: none;
+    }
+
+    .cmd-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: all var(--transition-fast);
+    }
+
+    .cmd-item:hover, .cmd-item.selected {
+      background: var(--accent-emerald-glow);
+      color: var(--accent-emerald);
+    }
+
+    .cmd-footer {
+      padding: 10px 18px;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--bg-card-solid);
+      border: 1px solid var(--accent-emerald);
+      color: var(--accent-emerald);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 200;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 40px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .quote-box {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      list-style: none;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+
+    .social-links a:hover {
+      color: var(--accent-emerald);
+    }
+
+    .copyright {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      margin-top: 12px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-title { font-size: 2.2rem; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .cmd-overlay { padding-top: 5vh; }
+      .cmd-modal { width: 92%; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body>
 
-<div class="page-shell">
-  <header class="hero-card">
-    <div class="hero-badge">Portfolio</div>
-    <h1 class="hero-title">Abhideep Das</h1>
-    <p class="hero-subtitle">
-      Backend Developer | Java &amp; Spring Boot Enthusiast | Continuous Learner | Problem Solver | <a class="blog-pill" href="https://abhideepd.github.io/myBlog/" target="_blank">my Blog</a>
-    </p>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="#" class="logo">
+          <span class="logo-badge">AD</span>
+          <span>Abhideep Das</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#code">Philosophy</a></li>
+          <li><a href="#opensource">Open Source</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#stack">Stack</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="cmd-trigger" id="cmdTriggerBtn" title="Open Command Palette (Cmd+K)">
+            <span>Search</span>
+            <span class="kbd">⌘K</span>
+          </button>
+          
+          <button class="btn-icon" id="themeToggleBtn" title="Toggle Theme">
+            <span id="themeIcon">☀️</span>
+          </button>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <div id="sections" class="space-y-4"></div>
-</div>
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero-section" id="about">
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span>Open for Backend Engineering Opportunities</span>
+      </div>
 
-<script>
-const sections = [
-  {
-    id: 'resume',
-    title: '📄 Resume & Profiles',
-    color: 'from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',
-    content: `
-      <ul class="space-y-2">
-        <li>📄 <a href="https://drive.google.com/file/d/1LaNCUHdzn3MVPCTTT6gImOeOMr2csz-Q/view?usp=sharing" target="_blank" class="text-blue-600 hover:text-blue-800">My Resume</a></li>
-        <li>💼 <a href="https://www.linkedin.com/in/imabhideep/" target="_blank" class="text-blue-600 hover:text-blue-800">LinkedIn</a></li>
-        <li><a href="https://www.hackerrank.com/profile/abhideepd" target="_blank" class="text-blue-600 hover:text-blue-800">HackerRank Profile</a></li>
-        <li><a href="https://leetcode.com/u/IMABHIDEEP/" target="_blank" class="text-blue-600 hover:text-blue-800">LeetCode Profile</a></li>
-        <li><a href="https://github.com/abhideepd" target="_blank" class="text-blue-600 hover:text-blue-800">GitHub profile</a></li>
-      </ul>
-    `
-  },
-  {
-    id: 'opensource',
-    title: '🤝 Open Source Contributions',
-    color: 'from-green-500 to-green-600 hover:from-green-600 hover:to-green-700',
-    content: `
-      <ul class="space-y-3">
-        <li><strong><a href="https://github.com/angular/angular" target="_blank" class="text-blue-600 hover:text-blue-800">Angular</a>:</strong>
-          <ul class="ml-6 mt-1">
-            <li><a href="https://github.com/angular/angular/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd" target="_blank" class="text-blue-600 hover:text-blue-800">Merged PRs</a></li>
-          </ul>
-        </li>
-        <li><strong><a href="https://github.com/cpinitiative/usaco-guide" target="_blank" class="text-blue-600 hover:text-blue-800">USACO Guide</a>:</strong>
-          <ul class="ml-6 mt-1">
-            <li><a href="https://github.com/cpinitiative/usaco-guide/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd" target="_blank" class="text-blue-600 hover:text-blue-800">Merged PRs</a></li>
-          </ul>
-        </li>
-      </ul>
-      <p class="mt-4 text-gray-700 italic">Contributing to open source has shaped the way I write and think about code—clean commits, meaningful PRs, and readable documentation.</p>
-    `
-  },
-  {
-    id: 'projects',
-    title: '🔗 Personal Projects',
-    color: 'from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700',
-    content: `
-      <div class="space-y-4">
-        <div>🌀 <a href="https://abhideepd.github.io/myBlog/" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold">myBlog</a>: A minimalist blog engine using Flask and Markdown.</div>
-        <div>🔬 <a href="https://abhideepd.github.io/Tic-Tac-Toe/" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold">n*n tic tac toe</a>: A complete frontend n*n tic tac toe with 3 modes—manual, vs computer, and computer vs computer.
-          <div class="mt-1"><a href="https://github.com/abhideepd/Tic-Tac-Toe" target="_blank" class="text-blue-500 hover:text-blue-700 text-sm">tic-tac-toe repo link</a></div>
+      <h1 class="hero-title">
+        Building Scalable Systems.<br>
+        <span class="gradient-text">Solving Hard Problems with Clean Code.</span>
+      </h1>
+
+      <p class="hero-bio">
+        Hi, I'm <strong>Abhideep Das</strong> — a Backend Engineer passionate about 
+        <strong>Java, Spring Boot, REST APIs, and System Design</strong>. 
+        I focus on writing maintainable software, contributing to open-source ecosystems like <strong>Angular</strong> and <strong>USACO Guide</strong>, 
+        and building high-performance developer tools.
+      </p>
+
+      <!-- Key Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-card">
+          <div class="stat-value">700+</div>
+          <div class="stat-label">DSA Problems Solved</div>
         </div>
-        <div>🧪 <a href="https://abhideepd.github.io/typemint/" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold">typemint</a>: A custom touch typing website with advanced analytics.
-          <div class="mt-1"><a href="https://github.com/abhideepd/typemint" target="_blank" class="text-blue-500 hover:text-blue-700 text-sm">typemint repo link</a></div>
+
+        <div class="stat-card">
+          <div class="stat-value">Merged</div>
+          <div class="stat-label">PRs in Angular & USACO</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">Top 32%</div>
+          <div class="stat-label">Worldwide LeetCode Rank</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">6-Star</div>
+          <div class="stat-label">HackerRank Solver</div>
         </div>
       </div>
-    `
-  },
-  {
-    id: 'achievements',
-    title: '🌟 Achievements',
-    color: 'from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700',
-    content: `
-      <ul class="space-y-2">
-        <li>🏆 Solved 700+ problems across platforms</li>
-        <li>Top 32% worldwide on LeetCode and 6-star on HackerRank</li>
-        <li>📜 Completed courses on backend development and system design</li>
-        <li>🧠 Built custom tools as personal experiments</li>
-        <li>🥇 Top contributor in collaborative coding groups</li>
-      </ul>
-    `
-  },
-  {
-    id: 'techstack',
-    title: '💡 Tech Stack',
-    color: 'from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700',
-    content: `
-      <ul class="space-y-2">
-        <li><strong>Languages:</strong> Java, JavaScript, Python</li>
-        <li><strong>Backend:</strong> Spring Boot, REST APIs, MySQL, PostgreSQL</li>
-        <li><strong>Frontend:</strong> Angular (basic), HTML, CSS</li>
-        <li><strong>Tools:</strong> Git, GitHub, Postman, Docker (basics), Maven</li>
-        <li><strong>Other:</strong> DSA, Multithreading, System Design (beginner)</li>
-      </ul>
-    `
-  },
-  {
-    id: 'about',
-    title: '🧑‍💻 About Me',
-    color: 'from-red-500 to-red-600 hover:from-red-600 hover:to-red-700',
-    content: `
-      <p class="mb-4">I'm a developer who enjoys building meaningful things...</p>
-      <p class="mb-3">I'm especially passionate about:</p>
-      <ul class="space-y-1 mb-4 ml-6">
-        <li>• Crafting clean and maintainable code</li>
-        <li>• Contributing to open source</li>
-        <li>• Solving real-world problems with tech</li>
-      </ul>
-      <p>I'm always open to interesting challenges and collaborations! 🚀</p>
-    `
-  },
-  {
-    id: 'connect',
-    title: '💬 Let\'s Connect',
-    color: 'from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700',
-    content: `
-      <p class="mb-4">I love connecting with curious and passionate people...</p>
-      <blockquote class="border-l-4 border-teal-500 pl-4 italic mb-4 text-gray-700">
-        "Code is not just what we write, it's how we think." ✨
-      </blockquote>
-      <a href="https://x.com/BHIDEEP" target="_blank" class="text-blue-600 hover:text-blue-800">twitter</a>
-    `
-  }
-];
 
-const container = document.getElementById('sections');
-sections.forEach(sec => {
-  const wrapper = document.createElement('div');
-  wrapper.className = "section-card";
-  wrapper.innerHTML = `
-    <button class="accordion-btn bg-gradient-to-r ${sec.color}">
-      <span>${sec.title}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </button>
-    <div class="content section-content hidden">${sec.content}</div>
-  `;
-  const btn = wrapper.querySelector('button');
-  const icon = btn.querySelector('svg');
-  const contentDiv = wrapper.querySelector('.content');
-  btn.addEventListener('click', () => {
-    const isOpen = !contentDiv.classList.contains('hidden');
-    contentDiv.classList.toggle('hidden');
-    if (!isOpen) {
-      contentDiv.classList.add('animate-fade-in');
-      icon.classList.add('rotate-180');
-    } else {
-      icon.classList.remove('rotate-180');
+      <!-- Call To Actions -->
+      <div class="cta-group">
+        <a href="https://drive.google.com/file/d/1LaNCUHdzn3MVPCTTT6gImOeOMr2csz-Q/view?usp=sharing" target="_blank" class="btn btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          View Resume
+        </a>
+
+        <a href="https://github.com/abhideepd" target="_blank" class="btn btn-secondary">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Profile
+        </a>
+
+        <button class="btn btn-secondary" onclick="copyEmail()">
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Copy Contact Info
+        </button>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="content-grid">
+      
+      <!-- Interactive IDE / Philosophy Section -->
+      <section id="code">
+        <h2 class="section-title">
+          <span class="title-prefix">01.</span> Developer Philosophy &amp; Code Sandbox
+        </h2>
+
+        <div class="ide-window">
+          <div class="ide-header">
+            <div class="ide-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+
+            <div class="ide-tabs">
+              <button class="tab-btn active" data-tab="tab1">⚡ AbhideepDas.java</button>
+              <button class="tab-btn" data-tab="tab2">🤝 OpenSourceMindset.java</button>
+              <button class="tab-btn" data-tab="tab3">📊 EngineerProfile.json</button>
+            </div>
+
+            <div class="ide-actions">
+              <button class="run-btn" id="runCodeBtn">
+                <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Run
+              </button>
+            </div>
+          </div>
+
+          <div class="ide-body">
+            <!-- Tab 1 -->
+            <div class="tab-content active" id="tab1">
+<pre><code><span class="anno">@Component</span>
+<span class="kw">public class</span> <span class="type">AbhideepDas</span> <span class="kw">implements</span> <span class="type">BackendDeveloper</span> {
+
+    <span class="kw">private final</span> <span class="type">String</span> coreStack = <span class="str">"Java 21, Spring Boot, REST APIs"</span>;
+    <span class="kw">private final</span> <span class="type">String</span> databaseEngine = <span class="str">"PostgreSQL & MySQL"</span>;
+
+    <span class="anno">@Override</span>
+    <span class="kw">public</span> <span class="type">Solution</span> <span class="fn">tackleChallenge</span>(<span class="type">Problem</span> problem) {
+        <span class="kw">if</span> (problem.<span class="fn">isComplex</span>()) {
+            <span class="type">SystemDesign</span> design = <span class="kw">new</span> <span class="type">SystemDesign</span>(problem);
+            <span class="kw">return</span> design.<span class="fn">buildScalableArchitecture</span>();
+        }
+        <span class="kw">return</span> <span class="kw">new</span> <span class="type">CleanCode</span>(problem).<span class="fn">optimizeTimeComplexity</span>();
     }
-  });
-  container.appendChild(wrapper);
-});
-</script>
+}</code></pre>
+            </div>
+            </div>
+
+            <!-- Tab 2 -->
+            <div class="tab-content" id="tab2">
+<pre><code><span class="kw">public class</span> <span class="type">OpenSourceJourney</span> {
+
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="type">String</span>[] args) {
+        <span class="type">String</span>[] repositories = { <span class="str">"angular/angular"</span>, <span class="str">"cpinitiative/usaco-guide"</span> };
+        
+        <span class="kw">for</span> (<span class="type">String</span> repo : repositories) {
+            <span class="type">PullRequest</span> pr = <span class="type">GitHub</span>.<span class="fn">createPR</span>(repo);
+            pr.<span class="fn">ensureCleanCommits</span>();
+            pr.<span class="fn">writeComprehensiveTests</span>();
+            pr.<span class="fn">merge</span>(); <span class="cmnt">// Contribution accepted!</span>
+        }
+    }
+}</code></pre>
+            </div>
+
+            <!-- Tab 3 -->
+            <div class="tab-content" id="tab3">
+<pre><code>{
+  <span class="str">"engineer"</span>: <span class="str">"Abhideep Das"</span>,
+  <span class="str">"role"</span>: <span class="str">"Backend Developer"</span>,
+  <span class="str">"metrics"</span>: {
+    <span class="str">"dsa_solved"</span>: <span class="num">700</span>,
+    <span class="str">"hackerrank_stars"</span>: <span class="num">6</span>,
+    <span class="str">"leetcode_tier"</span>: <span class="str">"Top 32% Worldwide"</span>
+  },
+  <span class="str">"interests"</span>: [<span class="str">"System Design"</span>, <span class="str">"Open Source"</span>, <span class="str">"Touch Typing Analytics (typemint)"</span>]
+}</code></pre>
+            </div>
+            </div>
+          </div>
+
+          <div class="ide-output" id="ideConsole">
+            <div class="ide-output-title">▶ Execution Output (Simulated JVM stdout)</div>
+            <div id="consoleText">Build Success! AbhideepDas initialized with Spring Boot 3.x context. Ready to solve backend bottlenecks.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open Source Contributions -->
+      <section id="opensource">
+        <h2 class="section-title">
+          <span class="title-prefix">02.</span> Open Source Contributions
+        </h2>
+
+        <div class="os-grid">
+          <!-- Angular -->
+          <div class="os-card">
+            <div>
+              <div class="os-header">
+                <div class="os-title">Angular (angular/angular)</div>
+                <span class="badge-merged">Merged PRs</span>
+              </div>
+              <p class="os-desc">
+                Contributed to the core Angular framework repository. Working in massive open-source codebases taught me the value of clean commit history, defensive testing, and meticulous PR reviews.
+              </p>
+            </div>
+            <a href="https://github.com/angular/angular/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd" target="_blank" class="os-link">
+              View Merged PRs on GitHub &rarr;
+            </a>
+          </div>
+
+          <!-- USACO Guide -->
+          <div class="os-card">
+            <div>
+              <div class="os-header">
+                <div class="os-title">USACO Guide</div>
+                <span class="badge-merged">Merged PRs</span>
+              </div>
+              <p class="os-desc">
+                Contributed bug fixes and enhancements to the USACO Guide project — a premier competitive programming resource relied upon by thousands of algorithmic problem solvers globally.
+              </p>
+            </div>
+            <a href="https://github.com/cpinitiative/usaco-guide/pulls?q=is%3Apr+is%3Aclosed+author%3Aabhideepd" target="_blank" class="os-link">
+              View Merged PRs on GitHub &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section id="projects">
+        <h2 class="section-title">
+          <span class="title-prefix">03.</span> Featured Personal Projects
+        </h2>
+
+        <div class="projects-grid">
+          <!-- typemint -->
+          <div class="project-card">
+            <div>
+              <h3 class="project-title">typemint</h3>
+              <p class="project-desc">
+                A custom touch-typing engine &amp; analytics platform. Built to give typists granular speed/accuracy word-level analytics and dedicated target practice for weak keystrokes.
+              </p>
+              <div class="tag-group">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Analytics</span>
+                <span class="tag">HTML5/CSS3</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://abhideepd.github.io/typemint/" target="_blank" class="project-link">Live App ↗</a>
+              <a href="https://github.com/abhideepd/typemint" target="_blank" class="project-link">GitHub Repo ↗</a>
+            </div>
+          </div>
+
+          <!-- n*n tic-tac-toe -->
+          <div class="project-card">
+            <div>
+              <h3 class="project-title">n*n Tic-Tac-Toe</h3>
+              <p class="project-desc">
+                An arbitrary board size ($n \times n$) Tic-Tac-Toe engine supporting 3 interactive modes: Player vs Player, Player vs Computer AI, and Computer vs Computer simulation.
+              </p>
+              <div class="tag-group">
+                <span class="tag">Algorithms</span>
+                <span class="tag">Game AI</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://abhideepd.github.io/Tic-Tac-Toe/" target="_blank" class="project-link">Live App ↗</a>
+              <a href="https://github.com/abhideepd/Tic-Tac-Toe" target="_blank" class="project-link">GitHub Repo ↗</a>
+            </div>
+          </div>
+
+          <!-- myBlog -->
+          <div class="project-card">
+            <div>
+              <h3 class="project-title">myBlog Engine</h3>
+              <p class="project-desc">
+                A lightweight, minimal Markdown blog engine powered by Python and Flask. Created as a simple personal blogging platform with zero unnecessary overhead.
+              </p>
+              <div class="tag-group">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Markdown</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://abhideepd.github.io/myBlog/" target="_blank" class="project-link">Live Blog ↗</a>
+              <a href="https://github.com/abhideepd/myBlog" target="_blank" class="project-link">GitHub Repo ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Engineering Arsenal & Stack -->
+      <section id="stack">
+        <h2 class="section-title">
+          <span class="title-prefix">04.</span> Tech Stack &amp; Capabilities
+        </h2>
+
+        <div class="skills-container">
+          <div class="skill-tabs">
+            <button class="filter-btn active" data-filter="all">All Skills</button>
+            <button class="filter-btn" data-filter="backend">Backend &amp; Languages</button>
+            <button class="filter-btn" data-filter="db">Databases &amp; Tools</button>
+            <button class="filter-btn" data-filter="concepts">DSA &amp; Architecture</button>
+          </div>
+
+          <div class="skills-grid" id="skillsGrid">
+            <div class="skill-pill" data-category="backend">☕ Java</div>
+            <div class="skill-pill" data-category="backend">🌱 Spring Boot</div>
+            <div class="skill-pill" data-category="backend">🔌 REST APIs</div>
+            <div class="skill-pill" data-category="backend">🐍 Python</div>
+            <div class="skill-pill" data-category="backend">⚡ JavaScript</div>
+
+            <div class="skill-pill" data-category="db">🐬 MySQL</div>
+            <div class="skill-pill" data-category="db">🐘 PostgreSQL</div>
+            <div class="skill-pill" data-category="db">📦 Maven</div>
+            <div class="skill-pill" data-category="db">🛠️ Git &amp; GitHub</div>
+            <div class="skill-pill" data-category="db">🐋 Docker (Basics)</div>
+            <div class="skill-pill" data-category="db">📮 Postman</div>
+
+            <div class="skill-pill" data-category="concepts">🧠 Data Structures &amp; Algorithms</div>
+            <div class="skill-pill" data-category="concepts">🧵 Multithreading &amp; Concurrency</div>
+            <div class="skill-pill" data-category="concepts">🏗️ System Design Basics</div>
+            <div class="skill-pill" data-category="concepts">📐 OOP &amp; Clean Architecture</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Command Palette Overlay -->
+  <div class="cmd-overlay" id="cmdOverlay">
+    <div class="cmd-modal">
+      <div class="cmd-search-bar">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" class="cmd-search-input" id="cmdSearchInput" placeholder="Type a command or jump to section..." autocomplete="off">
+      </div>
+
+      <ul class="cmd-list" id="cmdList">
+        <li class="cmd-item" onclick="executeCmd('resume')"><span>📄 View Resume PDF</span><span class="kbd">Drive</span></li>
+        <li class="cmd-item" onclick="executeCmd('github')"><span>💼 Open GitHub Profile</span><span class="kbd">abhideepd</span></li>
+        <li class="cmd-item" onclick="executeCmd('leetcode')"><span>🏆 Open LeetCode Profile</span><span class="kbd">IMABHIDEEP</span></li>
+        <li class="cmd-item" onclick="executeCmd('linkedin')"><span>👔 Open LinkedIn Profile</span><span class="kbd">imabhideep</span></li>
+        <li class="cmd-item" onclick="executeCmd('projects')"><span>🔗 Jump to Projects</span><span class="kbd">Section</span></li>
+        <li class="cmd-item" onclick="executeCmd('opensource')"><span>🤝 Jump to Open Source</span><span class="kbd">Section</span></li>
+        <li class="cmd-item" onclick="executeCmd('theme')"><span>☀️ Toggle Light / Dark Theme</span><span class="kbd">Theme</span></li>
+        <li class="cmd-item" onclick="executeCmd('copy')"><span>✉️ Copy Contact Info</span><span class="kbd">Clipboard</span></li>
+      </ul>
+
+      <div class="cmd-footer">
+        <span>Use <span class="kbd">↑</span> <span class="kbd">↓</span> to navigate, <span class="kbd">↵</span> to select</span>
+        <span><span class="kbd">ESC</span> to close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied contact email to clipboard!</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="quote-box">
+          "Code is not just what we write; it's how we structure our thoughts."
+        </div>
+
+        <ul class="social-links">
+          <li><a href="mailto:abhideepd@gmail.com">Email</a></li>
+          <li><a href="https://github.com/abhideepd" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/imabhideep/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://leetcode.com/u/IMABHIDEEP/" target="_blank">LeetCode</a></li>
+          <li><a href="https://www.hackerrank.com/profile/abhideepd" target="_blank">HackerRank</a></li>
+          <li><a href="https://x.com/BHIDEEP" target="_blank">Twitter / X</a></li>
+          <li><a href="https://abhideepd.github.io/myBlog/" target="_blank">myBlog</a></li>
+        </ul>
+
+        <div class="copyright">
+          &copy; 2026 Abhideep Das. Crafted with simple, smart &amp; witty engineering.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Theme Toggle Logic
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlEl = document.documentElement;
+
+    function setTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    themeBtn.addEventListener('click', () => {
+      const current = htmlEl.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // IDE Code Sandbox Tab Switcher
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.getAttribute('data-tab');
+        
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Run Simulated Code Button
+    const runCodeBtn = document.getElementById('runCodeBtn');
+    const ideConsole = document.getElementById('ideConsole');
+    const consoleText = document.getElementById('consoleText');
+
+    const outputs = [
+      "▶ JVM Output: [SUCCESS] AbhideepDas Spring Bean injected. Solved complex problem in O(log N) time with zero memory leaks.",
+      "▶ Git Output: [MERGED] PR #4892 merged into angular/angular. Build passes 100% of unit tests.",
+      "▶ JSON Output: Profile validated. 700+ DSA solutions loaded across LeetCode & Codeforces."
+    ];
+
+    let outputIndex = 0;
+    runCodeBtn.addEventListener('click', () => {
+      ideConsole.classList.add('show');
+      consoleText.textContent = outputs[outputIndex % outputs.length];
+      outputIndex++;
+    });
+
+    // Skills Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const skillPills = document.querySelectorAll('.skill-pill');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-filter');
+
+        skillPills.forEach(pill => {
+          if (category === 'all' || pill.getAttribute('data-category') === category) {
+            pill.style.display = 'inline-flex';
+          } else {
+            pill.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Command Palette Logic
+    const cmdOverlay = document.getElementById('cmdOverlay');
+    const cmdTriggerBtn = document.getElementById('cmdTriggerBtn');
+    const cmdSearchInput = document.getElementById('cmdSearchInput');
+    const cmdList = document.getElementById('cmdList');
+    const cmdItems = cmdList.getElementsByTagName('li');
+
+    function openCmd() {
+      cmdOverlay.classList.add('active');
+      cmdSearchInput.value = '';
+      cmdSearchInput.focus();
+      filterCmdItems('');
+    }
+
+    function closeCmd() {
+      cmdOverlay.classList.remove('active');
+    }
+
+    cmdTriggerBtn.addEventListener('click', openCmd);
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        cmdOverlay.classList.contains('active') ? closeCmd() : openCmd();
+      }
+      if (e.key === 'Escape') {
+        closeCmd();
+      }
+    });
+
+    cmdOverlay.addEventListener('click', (e) => {
+      if (e.target === cmdOverlay) closeCmd();
+    });
+
+    cmdSearchInput.addEventListener('input', (e) => {
+      filterCmdItems(e.target.value.toLowerCase());
+    });
+
+    function filterCmdItems(query) {
+      Array.from(cmdItems).forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    }
+
+    function executeCmd(action) {
+      closeCmd();
+      if (action === 'resume') window.open('https://drive.google.com/file/d/1LaNCUHdzn3MVPCTTT6gImOeOMr2csz-Q/view?usp=sharing', '_blank');
+      if (action === 'github') window.open('https://github.com/abhideepd', '_blank');
+      if (action === 'leetcode') window.open('https://leetcode.com/u/IMABHIDEEP/', '_blank');
+      if (action === 'linkedin') window.open('https://www.linkedin.com/in/imabhideep/', '_blank');
+      if (action === 'projects') document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      if (action === 'opensource') document.getElementById('opensource').scrollIntoView({ behavior: 'smooth' });
+      if (action === 'theme') themeBtn.click();
+      if (action === 'copy') copyEmail();
+    }
+
+    // Copy Email Toast
+    function copyEmail() {
+      const email = "abhideepd@gmail.com";
+      navigator.clipboard.writeText(email).catch(() => {});
+      
+      const toast = document.getElementById('toast');
+      toast.textContent = "Copied abhideepd@gmail.com to clipboard!";
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
